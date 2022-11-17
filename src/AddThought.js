@@ -1,11 +1,13 @@
-import React, {useState} from "react";
-import { generateId, getNewExpirationTime } from "./utilities";
+import React, {useEffect, useState} from "react";
+import { generateId, getNewExpirationTime, switchBackground, randomColor} from "./utilities";
 import './styles.css'
 
 
 export const AddThought = (props)=>{
 
     const [text, setText] = useState("");
+
+    
 
     const handleChange = (e)=>{
         setText(e.target.value);
@@ -17,7 +19,9 @@ export const AddThought = (props)=>{
         var obj = {id:generateId(), text:text, expiresAt:getNewExpirationTime()}
         
         if(obj.text.length>1)
-            props.addThought(obj);
+        {   props.addThought(obj);
+            switchBackground();
+        }
 
         setText("");
 
@@ -26,7 +30,7 @@ export const AddThought = (props)=>{
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" onChange={handleChange} value={text} placeholder="What's on your mind?"/>
-            <input type="submit"  value="Add"/>
+            <input type="submit"  value="Add" id="form_submit"/>
         </form>
     );
 
