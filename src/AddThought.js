@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import { generateId, getNewExpirationTime, switchBackground, randomColor} from "./utilities";
+import React, {useState} from "react";
+import { generateId, getNewExpirationTime, switchBackground} from "./utilities";
 import './styles.css'
 
 
