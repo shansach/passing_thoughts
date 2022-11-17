@@ -2,15 +2,17 @@ import React,{useEffect} from "react";
 
 export const Thought = (props)=>{
 
-    useEffect((props)=>{
-        const timeLeft = props.thought.expiresAt - Date.now();
-        const timout = setTimeout(()=>props.removeThought(props.thought), timeLeft);
+    const {thought, removeThought} = props;
+
+    useEffect(()=>{
+        const timeLeft = thought.expiresAt - Date.now();
+        const timout = setTimeout(()=>removeThought(thought), timeLeft);
         return ()=>clearTimeout(timout);
-    }, [props.thought]);
+    }, [thought]);
 
     const handleRemove = ()=>{
-        props.removeThought(props.thought);
+        removeThought(thought);
     }
     
-    return(<li>{props.thought.text} <button onClick={handleRemove}>Remove</button> </li>);
+    return(<li>{thought.text} <button onClick={handleRemove}>Remove</button> </li>);
 }
