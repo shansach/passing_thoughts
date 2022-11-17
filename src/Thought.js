@@ -2,7 +2,7 @@ import React,{useEffect} from "react";
 
 export const Thought = (props)=>{
 
-    useEffect(()=>{
+    useEffect((props)=>{
         const timeLeft = props.thought.expiresAt - Date.now();
         const timout = setTimeout(()=>props.removeThought(props.thought), timeLeft);
         return ()=>clearTimeout(timout);
