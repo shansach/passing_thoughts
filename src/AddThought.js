@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { generateId, getNewExpirationTime } from "./utilities";
+import './styles.css'
 
 
 export const AddThought = (props)=>{
@@ -24,8 +25,8 @@ export const AddThought = (props)=>{
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" onChange={handleChange} value={text} />
-            <input type="submit"  />
+            <input type="text" onChange={handleChange} value={text} placeholder="What's on your mind?"/>
+            <input type="submit"  value="Add"/>
         </form>
     );
 

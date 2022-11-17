@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { generateId, getNewExpirationTime } from './utilities';
 import {AddThought} from './AddThought.js';
 import {Thought} from './Thought.js'
+import './styles.css'
 
 
 
@@ -35,7 +36,7 @@ function App() {
   return (
     <div className="App">
 
-      <header>Passing Thoughts</header>
+      <header><h1>Passing Thoughts</h1></header>
       
 
       <AddThought addThought= {addThought}/>

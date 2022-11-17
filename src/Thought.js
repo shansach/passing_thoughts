@@ -1,4 +1,5 @@
 import React,{useEffect} from "react";
+import './styles.css'
 
 export const Thought = (props)=>{
 
@@ -16,5 +17,5 @@ export const Thought = (props)=>{
         removeThought(thought);
     }
     
-    return(<li>{thought.text} <button onClick={handleRemove}>Remove</button> </li>);
+    return(<li>{thought.text} <button onClick={handleRemove} className='remove-button'>Remove</button> </li>);
 }
